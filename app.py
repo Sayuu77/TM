@@ -214,7 +214,7 @@ def display_results(predictions, confianza_minima):
     
     with col2:
         # Métricas rápidas
-        st.markdown("### 📈 Métricas")
+        st.markdown("Métricas")
         st.markdown(f"""
         <div class="metric-card">
             <div>Confianza Máxima</div>
@@ -234,7 +234,7 @@ def display_results(predictions, confianza_minima):
         """, unsafe_allow_html=True)
     
     # Gráfico de barras de probabilidades
-    st.markdown("### 📊 Distribución de Probabilidades")
+    st.markdown("###Distribución de Probabilidades")
     fig = px.bar(
         results_df, 
         x='Clase', 
@@ -252,7 +252,7 @@ def display_results(predictions, confianza_minima):
     st.plotly_chart(fig, use_container_width=True)
     
     # Tabla detallada
-    st.markdown("### 📋 Resultados Detallados")
+    st.markdown("Resultados Detallados")
     
     # Aplicar formato de color a la tabla
     def color_confianza(val):
@@ -281,7 +281,7 @@ if 'history' not in st.session_state:
 col1, col2 = st.columns([2, 1])
 
 with col1:
-    st.markdown("### 🎯 Captura de Imagen")
+    st.markdown("Captura de Imagen")
     
     if modo == "📷 Cámara Web":
         img_file_buffer = st.camera_input(
@@ -303,7 +303,7 @@ with col1:
         
         col_img1, col_img2 = st.columns(2)
         with col_img1:
-            st.markdown("**📷 Imagen Original**")
+            st.markdown("**Imagen Original**")
             st.image(img, use_column_width=True)
         
         # Preprocesar imagen
@@ -313,7 +313,7 @@ with col1:
             if processed_img is not None:
                 # Mostrar imagen procesada
                 with col_img2:
-                    st.markdown("**⚡ Imagen Procesada**")
+                    st.markdown("**Imagen Procesada**")
                     st.image(processed_img, use_column_width=True, clamp=True)
                 
                 # Realizar predicción
@@ -335,7 +335,7 @@ with col1:
                         })
 
 with col2:
-    st.markdown("### 📈 Historial de Análisis")
+    st.markdown("Historial de Análisis")
     
     if st.session_state.history:
         # Mostrar últimos 5 análisis
@@ -353,7 +353,7 @@ with col2:
         
         # Estadísticas del historial
         if len(st.session_state.history) > 1:
-            st.markdown("### 📊 Estadísticas")
+            st.markdown("Estadísticas")
             total_analyses = len(st.session_state.history)
             avg_confidence = np.mean([h['confidence'] for h in st.session_state.history])
             
@@ -363,19 +363,19 @@ with col2:
             with col_stat2:
                 st.metric("Confianza Promedio", f"{avg_confidence:.1%}")
     else:
-        st.info("📝 El historial aparecerá aquí después de realizar análisis.")
+        st.info("El historial aparecerá aquí después de realizar análisis.")
 
 # Información adicional
 with st.expander("ℹ️ Acerca de esta aplicación", expanded=False):
     st.markdown("""
-    **🤖 Tecnologías Utilizadas:**
+    **Tecnologías Utilizadas:**
     
     - **TensorFlow/Keras**: Framework de deep learning
     - **OpenCV**: Procesamiento de imágenes
     - **Streamlit**: Interfaz web interactiva
     - **Teachable Machine**: Entrenamiento del modelo
     
-    **🎯 Características:**
+    **Características:**
     
     - Reconocimiento en tiempo real
     - Múltiples modos de entrada (cámara/archivo)
@@ -383,17 +383,9 @@ with st.expander("ℹ️ Acerca de esta aplicación", expanded=False):
     - Historial de predicciones
     - Visualización interactiva de resultados
     
-    **📊 Interpretación de Confianza:**
+    **Interpretación de Confianza:**
     
     - 🟢 > 80%: Alta confianza
     - 🟠 60-80%: Confianza media
     - 🔴 < 60%: Baja confianza
     """)
-
-# Footer
-st.markdown("---")
-st.markdown("""
-<div style="text-align: center; color: #64748b; padding: 1rem;">
-    <p>Desarrollado con ❤️ usando Streamlit, TensorFlow y Teachable Machine</p>
-</div>
-""", unsafe_allow_html=True)
