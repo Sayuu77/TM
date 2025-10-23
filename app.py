@@ -90,6 +90,7 @@ with st.sidebar:
         ["📷 Cámara Web", "📁 Subir Imagen"],
         index=0
     )
+
     
     # Configuración de confianza mínima
     confianza_minima = st.slider(
