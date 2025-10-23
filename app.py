@@ -91,8 +91,6 @@ with st.sidebar:
         index=0
     )
     
-    st.markdown("---")
-    
     # Configuración de confianza mínima
     confianza_minima = st.slider(
         "Confianza mínima para detección:",
@@ -102,8 +100,6 @@ with st.sidebar:
         step=0.05,
         help="Ajusta el nivel de confianza mínimo para considerar una detección válida"
     )
-    
-    st.markdown("---")
     
     # Instrucciones
     st.markdown("Instrucciones")
