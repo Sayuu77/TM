@@ -81,10 +81,7 @@ st.markdown('<div class="subtitle">Powered by Teachable Machine & Deep Learning<
 # Sidebar con información y controles
 with st.sidebar:
     st.markdown("""
-    <div style="background: linear-gradient(135deg, #3b82f6, #60a5fa); 
-                padding: 1.5rem; border-radius: 10px; color: white; margin-bottom: 2rem;">
-        <h2 style="margin: 0; text-align: center;">📸 Configuración</h2>
-    </div>
+        <h2 style="margin: 0">Configuración</h2>
     """, unsafe_allow_html=True)
     
     # Selector de modo
