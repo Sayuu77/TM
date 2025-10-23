@@ -176,10 +176,9 @@ def display_results(predictions, confianza_minima):
     col1, col2 = st.columns([2, 1])
     
     with col1:
-        st.markdown('<div class="result-card">', unsafe_allow_html=True)
         
         if max_prob >= confianza_minima:
-            st.markdown("### ✅ **Detección Confirmada**")
+            st.markdown("**Detección Confirmada**")
             
             # Mostrar resultado principal con emoji y color
             if max_prob > 0.8:
@@ -323,7 +322,7 @@ with col1:
                     
                     if predictions is not None:
                         # Mostrar resultados
-                        st.markdown("### 🔍 Resultados del Análisis")
+                        st.markdown("Resultados del Análisis")
                         detected_class, confidence = display_results(predictions, confianza_minima)
                         
                         # Guardar en historial
