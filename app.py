@@ -103,16 +103,10 @@ with st.sidebar:
         help="Ajusta el nivel de confianza mínimo para considerar una detección válida"
     )
     
-    # Información del sistema
-    st.markdown("### 🖥️ Información del Sistema")
-    st.markdown(f"**Python:** {platform.python_version()}")
-    st.markdown("**Backend:** TensorFlow/Keras")
-    st.markdown("**Modelo:** CNN Pre-entrenado")
-    
     st.markdown("---")
     
     # Instrucciones
-    st.markdown("### 📋 Instrucciones")
+    st.markdown("Instrucciones")
     st.markdown("""
     1. Selecciona modo cámara o subir imagen
     2. Ajusta la confianza mínima
