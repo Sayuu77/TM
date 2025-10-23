@@ -303,7 +303,7 @@ with col1:
         col_img1, col_img2 = st.columns(2)
         with col_img1:
             st.markdown("**Imagen Original**")
-            st.image(img, use_column_width=True)
+            st.image(img, use_container_width=True)
         
         # Preprocesar imagen
         with st.spinner("🔄 Procesando imagen..."):
@@ -313,7 +313,7 @@ with col1:
                 # Mostrar imagen procesada
                 with col_img2:
                     st.markdown("**Imagen Procesada**")
-                    st.image(processed_img, use_column_width=True, clamp=True)
+                    st.image(processed_img, use_container_width=True, clamp=True)
                 
                 # Realizar predicción
                 with st.spinner("🧠 Analizando con IA..."):
